@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        fieldset{
+            width: max-content;
+            background-color: aliceblue;
+            margin: auto;
+            display: flex;
+        }
+        h4{
+            text-align: center;
+        }
+    </style>
+    <script>
+        function Currency() {
+            y = document.getElementById("converter").value;
+            return y;
+        }
+        function Calculate() {
+            y = Currency();
+            x = document.getElementById("value1").value;
+
+            if (x == "") {
+                document.getElementById("value2").value = "";
+            } else {
+                switch (y) {
+                    case "dollar":
+                        document.getElementById("value2").value = x * 9915; break;
+                    case "sgd":
+                        document.getElementById("value2").value = x * 13472; break;
+                    case "myr":
+                        document.getElementById("value2").value = x * 874; break;
+                    case "jpy":
+                        document.getElementById("value2").value = x * 120; break;
+                    case "eur":
+                        document.getElementById("value2").value = x * 15888; break;
+                    case "sar":
+                        document.getElementById("value2").value = x * 3592; break;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>
+            <h3>Kurs Rupiah - Mata Uang Asing</h3>
+        </legend>
+        <fieldset>
+            <div class="form-grup">
+                <h4>Masukan Nilai</h4>
+                <input type="number" class="form-control" id="value1" oninput="Calculate()">
+            </div>
+            <!-- <h4>Valas</h4> -->
+            <select onchange="Currency(); Calculate()" class="form-control" id="converter" style="width: 25%; height: 10%; align-self: flex-end;">
+                <option value="dollar">Dollar US</option>
+                <option value="sgd">Dollar Singapore</option>
+                <option value="myr">Ringgit Malaysia</option>
+                <option value="jpy">Yen Jepang</option>
+                <option value="eur">Euro</option>
+                <option value="sar">Riyal Arab Saudi</option>
+            </select>
+            <div class="form-grup">
+                <h4>Nilai Rupiah</h4>
+                <input type="number" class="form-control" id="value2" disabled>
+            </div>
+        </fieldset>
+    </fieldset>
+</body>
+
+</html>

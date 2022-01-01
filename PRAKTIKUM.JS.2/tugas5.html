@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Membuat Form Validasi </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<center><h2>FORM VALIDASI</h2></center>
+	<div class="login">
+			<div>
+				<label>Nama Lengkap:</label>
+				<input type="text" name="nama" id="nama" />
+			</div>
+			<div>
+				<label>Email Address:</label>
+				<input type="email" name="email" id="email" />
+			</div>
+			
+			<div>
+				<label>Tujuan keberangkatan:</label>
+				<input class="form-control" type="text" placeholder="Kota Atau Negara Tujuan" id="tujuan">
+        	</div>
+			<div>
+				<label>Jam Keberangkatan</label>
+				<input type="time">
+			</div>
+			<div class="form-group">
+				<label for="exampleFormControlSelect1">Jumlah Tiket</label>
+				<select>
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				</select>
+			  </div>
+			  </br>
+			  <button  class="btn btn-outline-primary" onclick="validasi()">Success</button>
+		</form>
+	</div>
+</body>
+<script>
+	function validasi() {
+		var nama = document.getElementById("nama").value;
+		var email = document.getElementById("email").value;
+		var alamat = document.getElementById("tujuan").value;
+		if (nama != "" && email!="" && tujuan !="") {
+			alert("Berhasil")
+		}else{
+			alert('Anda harus mengisi data dengan lengkap !');
+		}
+	}
+</script>
+</html>

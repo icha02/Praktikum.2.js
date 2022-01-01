@@ -1,0 +1,61 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Message</title>
+</head>
+<style>
+    * {
+        margin: 5;
+        padding: 5;
+        box-sizing: border-box;
+    }
+    body {
+            width: 900px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            position: relative;
+    }
+    #message {
+            position: absolute;
+            bottom: 0;
+            width: 125vh;
+            margin-right: 7%;
+        }
+    button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    h1 {
+        margin: 3px;
+        padding: 3px;
+        margin-bottom: 4px;
+    }
+    
+</style>
+<body>
+<div id="container">
+    <h1>Massage</h1>
+    <p id="chat"></p>
+    <input type="text" id="message" onchange="kirim()">
+    <button onclick="kirim()">kirim</button>
+</div>
+
+    <script>
+        let masuk = document.getElementById("message")
+        let hasil = document.getElementById("chat")
+        let isichat = ""
+
+        function kirim() {
+            isichat += masuk.value + "<br>"
+            hasil.innerHTML = isichat
+            masuk.value = ""
+        }
+        
+    </script>
+</body>
+</html>
